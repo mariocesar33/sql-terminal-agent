@@ -2,7 +2,10 @@
   "name": "sql-terminal-agent",
   "version": "1.0.0",
   "scripts": {
-    "": ""
+    "seed": "node src/seed.js",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check --write ."
   },
   "license": "ISC",
   "type": "module",
@@ -11,5 +14,8 @@
     "@faker-js/faker": "9.0.0",
     "ai": "4.3.0",
     "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15"
   }
 }

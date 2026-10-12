@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "seed": "node src/seed.js",
+    "ingest": "node src/ingest.js",
     "format": "biome format --write .",
     "lint": "biome lint .",
     "check": "biome check --write ."

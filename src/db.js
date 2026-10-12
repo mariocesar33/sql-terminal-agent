@@ -5,6 +5,7 @@ export function createdb(path = ":memory:") {
 
   db.exec(`
     CREATE TABLE IF NOT EXISTS accessLogs (
+      logId INTEGER PRIMARY KEY AUTOINCREMENT,
       ip TEXT NOT NULL,
       username TEXT NOT NULL,
       firstName TEXT NOT NULL,
@@ -14,12 +15,10 @@ export function createdb(path = ":memory:") {
       jobArea TEXT NOT NULL,
       company TEXT NOT NULL,
       jobTitle TEXT NOT NULL,
-      id TEXT PRIMARY KEY,
+      id TEXT NOT NULL,
       timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
     )
   `)
 
   return db
 }
-
-const db = createdb("access_logs.db")

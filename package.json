@@ -4,6 +4,7 @@
   "scripts": {
     "seed": "node src/seed.js",
     "ingest": "node src/ingest.js",
+    "env:setup": "cp .env.example .env",
     "format": "biome format --write .",
     "lint": "biome lint .",
     "check": "biome check --write ."

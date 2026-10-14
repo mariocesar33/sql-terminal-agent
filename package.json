@@ -4,7 +4,7 @@
   "scripts": {
     "seed": "node src/seed.js",
     "ingest": "node src/ingest.js",
-    "start": "node src/agent.js",
+    "start": "node src/index.js",
     "env:setup": "cp .env.example .env.local",
     "format": "biome format --write .",
     "lint": "biome lint .",

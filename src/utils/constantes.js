@@ -6,7 +6,7 @@
 //
 // Quem importa este ficheiro:
 //   seed.js, ingest.js    -> logFile, logInterval, (ingest) dbFile
-//   agent.js              -> dbFile, tableName
+//   index.js              -> dbFile, tableName
 //   validateSql.js        -> tableName, queryLimit
 //   schemaDescription.js  -> tableName
 //   ai.js                 -> tableName, maxRowsForAnswer
@@ -22,7 +22,7 @@ export const tableName = "accessLogs"
 // Limite de linhas por query gerada pela IA (aplicado em validateSql.js).
 export const queryLimit = 100
 // Ficheiro da base de dados SQLite: o ingest.js cria-o e enche-o,
-// o agent.js consulta-o.
+// o index.js consulta-o.
 export const dbFile = "access_logs.db"
 // Máximo de linhas do resultado enviadas à IA para escrever a resposta final.
 // Limitar poupa tokens (dinheiro) e evita pedidos gigantes.

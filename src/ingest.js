@@ -12,7 +12,7 @@
 //   Resultado: a memória fica baixa, qualquer que seja o tamanho do ficheiro.
 //
 // Como correr:  npm run ingest   (precisa do access.log criado pelo npm run seed)
-// Depois:       npm start        (agent.js faz perguntas sobre estes dados)
+// Depois:       npm start        (index.js faz perguntas sobre estes dados)
 // =============================================================================
 
 // createReadStream: abre uma stream de leitura (o ficheiro é lido aos poucos).

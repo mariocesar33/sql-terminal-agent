@@ -8,7 +8,7 @@
 // As regras no prompt (ai.js) são só um PEDIDO à IA, que pode ignorá-las.
 // Estas verificações em código são a garantia real.
 //
-// Usada por: ai.js (generateSqlObject), antes de devolver o SQL ao agent.js.
+// Usada por: ai.js (generateSqlObject), antes de devolver o SQL ao index.js.
 // =============================================================================
 
 // Lista de palavras proibidas (ver blockedKeywords.js).
@@ -17,7 +17,7 @@ import { blockedKeywords } from "./blockedKeywords.js"
 import { queryLimit, tableName } from "./constantes.js"
 
 // Recebe o SQL sugerido pela IA. Devolve o SQL pronto a executar (com LIMIT
-// se faltava) ou lança um erro "SQL rejeitado: ..." que o agent.js mostra
+// se faltava) ou lança um erro "SQL rejeitado: ..." que o index.js mostra
 // ao utilizador (via formatError.js).
 export function validateSql(sql) {
   // Remove espaços e um único ";" final, que é inofensivo.

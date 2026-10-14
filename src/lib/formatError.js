@@ -5,7 +5,7 @@
 // Aqui transformamos os mais comuns numa frase que o utilizador entende e sabe
 // o que fazer a seguir.
 //
-// Usado por: agent.js, no bloco catch do ciclo de perguntas.
+// Usado por: index.js, no bloco catch do ciclo de perguntas.
 // =============================================================================
 
 // Transforma erros técnicos em mensagens curtas para o terminal.

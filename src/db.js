@@ -8,12 +8,13 @@
 //
 // Quem usa:
 //   ingest.js -> abre a base e INSERE os registos lidos do access.log
-//   agent.js  -> abre a base e CONSULTA-a com as queries geradas pela IA
+//   index.js  -> abre a base e CONSULTA-a com as queries geradas pela IA
 // =============================================================================
 
 // DatabaseSync: classe do SQLite nativo do Node (API síncrona: cada comando
 // espera pelo resultado, o que torna o código mais simples).
 import { DatabaseSync } from "node:sqlite"
+import { tableName } from "./utils/constantes.js"
 
 // Abre (ou cria) a base de dados e devolve a ligação.
 // path = nome do ficheiro. O valor por omissão ":memory:" cria uma base
@@ -31,7 +32,7 @@ export function createdb(path = ":memory:") {
   //   id        -> UUID do acesso
   //   timestamp -> data/hora do acesso, em texto ISO 8601
   db.exec(`
-    CREATE TABLE IF NOT EXISTS accessLogs (
+    CREATE TABLE IF NOT EXISTS ${tableName} (
       logId INTEGER PRIMARY KEY AUTOINCREMENT,
       ip TEXT NOT NULL,
       username TEXT NOT NULL,

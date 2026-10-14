@@ -4,12 +4,12 @@
 //   A) generateSqlObject : pergunta em português  ->  SQL (+ explicação)
 //   C) generateAnswer    : resultado da query     ->  resposta em português
 //
-// (O passo B, executar o SQL, acontece no agent.js, na base de dados.)
+// (O passo B, executar o SQL, acontece no index.js, na base de dados.)
 //
 // Usamos o "AI SDK" da Vercel. O generateText é igual para qualquer provedor;
 // o que muda é o "model" (ver providers.js).
 //
-// Quem chama: agent.js. Este ficheiro usa: providers.js, validateSql.js,
+// Quem chama: index.js. Este ficheiro usa: providers.js, validateSql.js,
 // schemaDescription.js, blockedKeywords.js e constantes.js.
 // =============================================================================
 
@@ -88,7 +88,7 @@ export async function generateSqlObject(question, providerId) {
 }
 
 // ETAPA C — resultado da query -> resposta em linguagem natural.
-// O agent.js já executou o SQL e passa-nos as linhas encontradas.
+// O index.js já executou o SQL e passa-nos as linhas encontradas.
 export async function generateAnswer({ question, sql, rows, providerId }) {
   // Enviamos só as primeiras N linhas (maxRowsForAnswer): poupa tokens e evita
   // pedidos gigantes. "note" avisa a IA quando o resultado foi cortado.

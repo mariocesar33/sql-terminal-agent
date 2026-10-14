@@ -5,7 +5,7 @@
 // várias, mostra um menu no terminal. Devolve o id escolhido ("openai"/"gemini"),
 // que depois é passado ao ai.js.
 //
-// Usado por: agent.js (no arranque) e pelo teste rápido no fim de ai.js.
+// Usado por: index.js (no arranque) e pelo teste rápido no fim de ai.js.
 // =============================================================================
 
 // readline/promises: ler o que o utilizador escreve no terminal, com await.

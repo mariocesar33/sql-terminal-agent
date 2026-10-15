@@ -24,6 +24,7 @@ import { createWriteStream, statSync } from "node:fs"
 import { faker } from "@faker-js/faker"
 // Nome do ficheiro de logs e intervalo de progresso (ver constantes.js).
 import { logFile, logInterval } from "./utils/constantes.js"
+import { generateLogEntry, generateUser } from "./utils/mocks.js"
 
 // Quantos registos gerar. Vem do terminal (process.argv[2]); sem argumento, 100.
 // Ex.: "npm run seed -- 5000000" -> process.argv[2] é "5000000".
@@ -44,31 +45,6 @@ if (
 // Abre a stream de escrita. Daqui em diante, cada stream.write(...) envia
 // texto para o access.log. Se o ficheiro já existir, é recriado vazio.
 const stream = createWriteStream(logFile)
-
-// Cria UM utilizador falso (só os dados da pessoa).
-function generateUser() {
-  return {
-    ip: faker.internet.ip(),
-    username: faker.internet.userName(),
-    firstName: faker.person.firstName(),
-    lastName: faker.person.lastName(),
-    email: faker.internet.email(),
-    location: faker.location.city(),
-    jobArea: faker.person.jobArea(),
-    company: faker.company.name(),
-    jobTitle: faker.person.jobTitle(),
-  }
-}
-
-// Cria UM registo de acesso: copia os dados do utilizador (...user) e
-// acrescenta um id único do acesso (UUID) e a data/hora (nas últimas 24h).
-function generateLogEntry(user) {
-  return {
-    ...user,
-    id: faker.string.uuid(),
-    timestamp: faker.date.recent().toISOString(),
-  }
-}
 
 // BACKPRESSURE (contrapressão) — o conceito mais importante deste ficheiro.
 //
